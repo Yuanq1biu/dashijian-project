@@ -1,4 +1,4 @@
-function getUserInfo ()  {
+function getUserInfo() {
     $.ajax({
         type: "GET",
         url:'/my/userinfo',
@@ -15,8 +15,8 @@ const renderAvatar =(data) => {
 let name = data.nickname || data.username
 $('#welcome').html(`欢迎 ${name}`)
 if (data.user_pic !== null ){
-    $('.layui-nav-img').attr("src", user.user_pic).show()
-    (".text-avatar").hide();
+    $('.layui-nav-img').attr("src", data.user_pic).show()
+    $(".text-avatar").hide()
     } else {
         // 渲染文本头像
         $(".layui-nav-img").hide();
@@ -37,8 +37,5 @@ $("#btnLogout").click(() => {
         }
     );
 });
-
-
-
 
 getUserInfo()
