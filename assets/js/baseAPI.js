@@ -11,7 +11,6 @@ if (option.url.includes('/my/')){
     // 在发起真正的 Ajax 请求之前，统一拼接请求的根路径
 option.url = baseUrl + option.url
 option.complete =res => {
-    console.log(res);
     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败' )
     {location.href = '/login.html'
 localStorage.removeItem('token')
